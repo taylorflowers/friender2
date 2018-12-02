@@ -82,10 +82,10 @@
             android:layout_width="35dp"
             android:layout_height="40dp"
             android:layout_gravity="right|center_horizontal"
+            android:contentDescription="TODO"
             android:paddingTop="20dp"
             android:paddingBottom="20dp"
-            android:src="@android:drawable/ic_menu_edit"
-            android:contentDescription="TODO" />
+            android:src="@android:drawable/ic_menu_edit" />
 
     </LinearLayout>
 

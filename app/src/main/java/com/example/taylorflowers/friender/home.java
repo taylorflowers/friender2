@@ -7,6 +7,8 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageButton;
 
 
 /**
@@ -42,11 +44,11 @@ public class home extends Fragment {
      * @return A new instance of fragment home.
      */
     // TODO: Rename and change types and number of parameters
-    public static home newInstance(String param1, String param2) {
+    public static home newInstance(/*String param1, String param2*/) {
         home fragment = new home();
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
+//        args.putString(ARG_PARAM1, param1);
+//        args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
         return fragment;
     }
@@ -58,12 +60,28 @@ public class home extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        View rootView = inflater.inflate(R.layout.fragment_home, container, false);
+        final Button findFriends = (Button) rootView.findViewById(R.id.find_friends);
+        findFriends.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                System.out.println("Find Friends Button Pressed");
+            }
+        });
+        final Button matches = (Button) rootView.findViewById(R.id.matches);
+        findFriends.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                System.out.println("Matches Button Pressed");
+            }
+        });
         return inflater.inflate(R.layout.fragment_home, container, false);
     }
 
