@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/home2">
+
+    <fragment
+        android:id="@+id/home2"
+        android:name="com.example.taylorflowers.friender.home"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_home2_to_swipes"
+            app:destination="@id/swipes" />
+        <action
+            android:id="@+id/action_home2_to_matches"
+            app:destination="@id/matches" />
+        <action
+            android:id="@+id/action_home2_to_profile"
+            app:destination="@id/profile" />
+    </fragment>
+    <fragment
+        android:id="@+id/swipes"
+        android:name="com.example.taylorflowers.friender.Swipes"
+        android:label="fragment_swipes"
+        tools:layout="@layout/fragment_swipes" >
+        <action
+            android:id="@+id/action_swipes_to_home2"
+            app:destination="@id/home2" />
+    </fragment>
+    <fragment
+        android:id="@+id/matches"
+        android:name="com.example.taylorflowers.friender.Matches"
+        android:label="fragment_matches"
+        tools:layout="@layout/fragment_matches" >
+        <action
+            android:id="@+id/action_matches_to_home2"
+            app:destination="@id/home2" />
+    </fragment>
+    <fragment
+        android:id="@+id/profile"
+        android:name="com.example.taylorflowers.friender.Profile"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profile_to_home2"
+            app:destination="@id/home2" />
+    </fragment>
+</navigation>

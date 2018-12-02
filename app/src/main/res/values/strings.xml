@@ -1,6 +1,15 @@
 <resources>
     <string name="app_name">friender</string>
     <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
+    <string name="title_dashboard">Find</string>
     <string name="title_notifications">Notifications</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="find_friends">find friends</string>
+    <string name="button">Button</string>
+    <string name="matches">matches</string>
+    <string name="welcome_to_friender_nare_you_ready_to_sail_onto_your_new_friendship">Welcome to Friender! Are you ready to sail onto your new friendSHIP ;)</string>
+    <string name="name">Name</string>
+    <string name="congratulations_you_were_matched_with_the_following_people">Congratulations! You were matched with the following people.</string>
 </resources>
