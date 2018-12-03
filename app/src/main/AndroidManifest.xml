@@ -18,8 +18,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".homes"
-            android:label="@string/app_name"></activity>
+        <activity
+            android:name=".homes"
+            android:label="@string/app_name" />
+        <activity android:name=".match" />
+        <activity android:name=".Profiler" />
+        <activity android:name=".swipe"></activity>
     </application>
 
 </manifest>
