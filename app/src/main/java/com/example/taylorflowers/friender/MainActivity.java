@@ -1,5 +1,6 @@
 package com.example.taylorflowers.friender;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -46,28 +47,22 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 //        mTextMessage = (TextView) findViewById(R.id.message);
-        if (cases == 0) {
-
-        } else if (cases == 1) {
-
-        } else if (cases == 2) {
-
-        }
-
-
-        Button b = findViewById(R.id.fragmentgo);
-        b.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Fragment h = home.newInstance();
-                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-                transaction.replace(R.id.framelayout, h).commit();
-            }
-        });
+//        if (cases == 0) {
+//
+//        } else if (cases == 1) {
+//
+//        } else if (cases == 2) {
+//
+//        }
 
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+    }
+
+    public void openHome(View view) {
+        Intent intent = new Intent(MainActivity.this, homes.class);
+        startActivity(intent);
     }
 
 }
