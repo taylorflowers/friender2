@@ -54,13 +54,14 @@ public class MainActivity extends AppCompatActivity {
 
         }
 
+
         Button b = findViewById(R.id.fragmentgo);
-        b.setOnClickListener(new OnClickListener() {
+        b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Fragment h = home.newInstance();
                 FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-                transaction.replace(R.id.container, h).commit();
+                transaction.replace(R.id.framelayout, h).commit();
             }
         });
 
