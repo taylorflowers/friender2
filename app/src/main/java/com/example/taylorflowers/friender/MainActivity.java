@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -54,6 +55,14 @@ public class MainActivity extends AppCompatActivity {
 //        } else if (cases == 2) {
 //
 //        }
+        final ImageButton plus = findViewById(R.id.plusButton);
+        plus.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
 
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
