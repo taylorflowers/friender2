@@ -47,6 +47,22 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //line 52-64 create a base of people to swipe thru
+
+        People p = new People("Travis", 19, "heey i love to play guitar", 1111111111, "test@test.com", "password1");
+        People a = new People("Jared", 19, "never learned to read", 1111111111, "test1@test.com", "password1");
+        People b = new People("Lisa", 20, "BlackPink in your area!", 1111111111, "test2@test.com", "password1");
+        People c = new People("Jenny", 20, "Solo", 1111111111, "test3@test.com", "password1");
+        People d = new People("Pepper", 20, "The next person to message me an iron man reference gets punched", 1111111111, "test4@test.com", "password1");
+        People e = new People("Jimin", 20, "idk nan molla", 1111111111, "test5@test.com", "password1");
+
+        People.peoples.add(a);
+        People.peoples.add(b);
+        People.peoples.add(c);
+        People.peoples.add(d);
+        People.peoples.add(e);
+        People.peoples.add(p);
+
 //        mTextMessage = (TextView) findViewById(R.id.message);
 //        if (cases == 0) {
 //
@@ -55,23 +71,31 @@ public class MainActivity extends AppCompatActivity {
 //        } else if (cases == 2) {
 //
 //        }
-        final ImageButton plus = findViewById(R.id.plusButton);
-        plus.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
-
-
-
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
-        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+//        final ImageButton plus = findViewById(R.id.plusButton);
+//        plus.setOnClickListener(new OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//            }
+//        });
+//
+//
+//
+//        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+//        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
 
-    public void openHome(View view) {
-        Intent intent = new Intent(MainActivity.this, homes.class);
+    public void openRegister(View view) {
+        Intent intent = new Intent(MainActivity.this, registration.class);
         startActivity(intent);
+        finish();
     }
+
+    public void openLogin(View view) {
+        Intent intent = new Intent(MainActivity.this, login.class);
+        startActivity(intent);
+        finish();
+    }
+
 
 }

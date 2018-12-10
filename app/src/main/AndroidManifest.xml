@@ -23,7 +23,9 @@
             android:label="@string/app_name" />
         <activity android:name=".match" />
         <activity android:name=".Profiler" />
-        <activity android:name=".swipe"></activity>
+        <activity android:name=".swipe" />
+        <activity android:name=".login" />
+        <activity android:name=".registration"></activity>
     </application>
 
 </manifest>
