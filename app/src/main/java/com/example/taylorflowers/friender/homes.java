@@ -27,6 +27,7 @@ public class homes extends AppCompatActivity {
 
     public void openProfile(View view) {
         Intent intent = new Intent(homes.this, Profiler.class);
+        System.out.println("here");
         startActivity(intent);
     }
 
