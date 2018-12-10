@@ -1,6 +1,8 @@
 package com.example.taylorflowers.friender;
 
 import android.content.Intent;
+import android.hardware.Camera;
+import android.hardware.camera2.CameraAccessException;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -11,14 +13,18 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.TextView;
+
 
 public class MainActivity extends AppCompatActivity {
 
     private TextView mTextMessage;
     private int cases = -1;
-
+    FrameLayout frameLayout;
+    Camera camera;
+    ShowCamera showCamera;
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
@@ -62,6 +68,12 @@ public class MainActivity extends AppCompatActivity {
         People.peoples.add(d);
         People.peoples.add(e);
         People.peoples.add(p);
+
+        frameLayout = (FrameLayout)findViewById(R.id.frameLayout);
+        camera = Camera.open();
+        showCamera = new ShowCamera(this, camera);
+        frameLayout.addView(showCamera);
+
 
 //        mTextMessage = (TextView) findViewById(R.id.message);
 //        if (cases == 0) {
