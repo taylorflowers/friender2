@@ -68,6 +68,7 @@ public class People {
     }
 
     public void addLiked(People p) {
+        System.out.println(p.getName());
         liked.add(p);
     }
 

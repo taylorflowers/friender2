@@ -22,9 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
     private TextView mTextMessage;
     private int cases = -1;
-    FrameLayout frameLayout;
-    Camera camera;
-    ShowCamera showCamera;
+
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
@@ -68,11 +66,6 @@ public class MainActivity extends AppCompatActivity {
         People.peoples.add(d);
         People.peoples.add(e);
         People.peoples.add(p);
-
-        frameLayout = (FrameLayout)findViewById(R.id.frameLayout);
-        camera = Camera.open();
-        showCamera = new ShowCamera(this, camera);
-        frameLayout.addView(showCamera);
 
 
 //        mTextMessage = (TextView) findViewById(R.id.message);
