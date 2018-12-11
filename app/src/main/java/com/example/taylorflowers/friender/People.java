@@ -14,8 +14,8 @@ public class People {
     private String bio;
     private int number;
 
-    private ArrayList<People> liked;
-    private ArrayList<People> likedBy;
+    private List<People> liked = new ArrayList<>();
+    private List<People> likedBy = new ArrayList<>();
 
     public static People curr;
 
@@ -97,5 +97,9 @@ public class People {
 
     public static void setCurr(People p) { //sets current user
         curr = p;
+    }
+
+    public String toString() {
+        return name + " " + age + "\n" + number + "\n" + bio;
     }
 }

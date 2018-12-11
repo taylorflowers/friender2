@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -22,7 +23,7 @@ public class swipe extends AppCompatActivity {
         newCard();
     }
 
-    public void swipeRight(View view) { //TODO: fix null pointer error 
+    public void swipeRight(View view) { //TODO: for some reason it goes thru the list twice. fix
         People liked = People.getLiked(i);
         user.addLiked(liked);
         i++;
@@ -36,11 +37,8 @@ public class swipe extends AppCompatActivity {
 
     public void newCard() {
         if (i >= People.peoples.size() - 1) {
-            TextView bio = findViewById(R.id.bio);
-            TextView name = findViewById(R.id.name);
-            name.setText("");
-            String str = "You've out matched us! :/";
-            bio.setText(str);
+            Toast errorToast = Toast.makeText(swipe.this, "You've out matched us! Come back later to swipe some more.", Toast.LENGTH_SHORT);
+            errorToast.show();
         } else {
             TextView name = findViewById(R.id.name);
             TextView bio = findViewById(R.id.bio);
