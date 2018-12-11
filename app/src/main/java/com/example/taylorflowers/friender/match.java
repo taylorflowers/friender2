@@ -22,6 +22,12 @@ public class match extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_match);
 
+        user.addLikedBy(People.peoples.get(0)); //for fake dataset, random people like you
+        user.addLikedBy(People.peoples.get(2));
+        user.addLikedBy(People.peoples.get(5));
+
+        match = user.getMatches();
+
         if (match.size() == 0) {
             Toast errorToast = Toast.makeText(match.this, "No matches yet! Keep swiping to get matches!", Toast.LENGTH_SHORT);
             errorToast.show();
@@ -31,7 +37,7 @@ public class match extends AppCompatActivity {
             TextView num = findViewById(R.id.phone);
             name.setText(match.get(i).getName());
             bio.setText(match.get(i).getBio());
-            num.setText(match.get(i).getNumber());
+            num.setText(Integer.toString(match.get(i).getNumber()));
         }
     }
 
@@ -61,7 +67,7 @@ public class match extends AppCompatActivity {
         TextView num = findViewById(R.id.phone);
         name.setText(match.get(i).getName());
         bio.setText(match.get(i).getBio());
-        num.setText(match.get(i).getNumber());
+        num.setText(Integer.toString(match.get(i).getNumber()));
     }
 
 

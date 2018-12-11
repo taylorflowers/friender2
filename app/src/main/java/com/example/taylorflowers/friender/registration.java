@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class registration extends AppCompatActivity {
 
@@ -19,26 +20,31 @@ public class registration extends AppCompatActivity {
         final EditText password = findViewById(R.id.password);
         final EditText n = findViewById(R.id.name);
         final EditText a = findViewById(R.id.age);
-        final EditText p = findViewById(R.id.phone); //TODO: phone stuff
+        final EditText p = findViewById(R.id.phone);
         final EditText b = findViewById(R.id.bio);
 
         String pass = password.getText().toString();
         String email = e.getText().toString();
         People temp = People.containsEmail(email);
         if (temp != null) {
-            throw new Exception("email already has an account, sorry!");
+            Toast errorToast = Toast.makeText(registration.this, "Email already exists! Sorry. Try again!", Toast.LENGTH_SHORT);
+            errorToast.show();
+        } else if (!email.contains("@")) {
+            Toast errorToast = Toast.makeText(registration.this, "Email is not valid. Try again!", Toast.LENGTH_SHORT);
+            errorToast.show();
+        } else {
+            String name = n.getText().toString();
+            int age = Integer.parseInt(a.getText().toString());
+            String bio = b.getText().toString();
+            String phoneTemp = p.getText().toString();
+            int phone = Integer.parseInt(phoneTemp);
+            People user = new People(name, age, bio, phone, email, pass);
+
+            People.setCurr(user);
+
+            Intent intent = new Intent(registration.this, homes.class);
+            startActivity(intent);
+            finish();
         }
-
-        String name = n.getText().toString();
-        int age = Integer.parseInt(a.getText().toString());
-        String bio = b.getText().toString();
-
-        People user = new People(name, age, bio, 1111111111, email, pass); //TODO: edit phone from 1
-
-        People.setCurr(user);
-
-        Intent intent = new Intent(registration.this, homes.class);
-        startActivity(intent);
-        finish();
     }
 }

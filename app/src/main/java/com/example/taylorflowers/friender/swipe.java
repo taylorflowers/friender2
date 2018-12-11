@@ -23,7 +23,7 @@ public class swipe extends AppCompatActivity {
         newCard();
     }
 
-    public void swipeRight(View view) { //TODO: for some reason it goes thru the list twice. fix
+    public void swipeRight(View view) {
         People liked = People.getLiked(i);
         user.addLiked(liked);
         i++;

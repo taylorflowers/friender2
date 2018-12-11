@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class login extends AppCompatActivity {
 
@@ -21,7 +22,8 @@ public class login extends AppCompatActivity {
         String str = email.getText().toString();
         People temp = People.containsEmail(str);
         if (temp == null) {
-            throw new Exception("Invalid email!");
+            Toast errorToast = Toast.makeText(login.this, "Can't find account. Try again!", Toast.LENGTH_SHORT);
+            errorToast.show();
         }
         if (pass.equals(temp.getPass())) {
             People.setCurr(temp);
@@ -30,6 +32,7 @@ public class login extends AppCompatActivity {
             finish();
             return;
         }
-        throw new Exception("Invalid password!");
+        Toast errorToast = Toast.makeText(login.this, "Incorrect password!", Toast.LENGTH_SHORT);
+        errorToast.show();
     }
 }
