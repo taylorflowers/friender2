@@ -37,7 +37,7 @@ public class registration extends AppCompatActivity {
             int age = Integer.parseInt(a.getText().toString());
             String bio = b.getText().toString();
             String phoneTemp = p.getText().toString();
-            int phone = Integer.parseInt(phoneTemp);
+            long phone = Long.parseLong(phoneTemp);
             People user = new People(name, age, bio, phone, email, pass);
 
             People.setCurr(user);

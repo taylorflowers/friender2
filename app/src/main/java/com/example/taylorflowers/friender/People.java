@@ -12,14 +12,14 @@ public class People {
     private String pass;
     private int age;
     private String bio;
-    private int number;
+    private long number;
 
     private List<People> liked = new ArrayList<>();
     private List<People> likedBy = new ArrayList<>();
 
     public static People curr;
 
-    public People(String n, int a, String b, int num, String e, String p) {
+    public People(String n, int a, String b, long num, String e, String p) {
         bio = b;
         age = a;
         email = e;
@@ -45,7 +45,7 @@ public class People {
         return name;
     }
 
-    public int getNumber() { return number; }
+    public long getNumber() { return number; }
 
     public String getEmail() {
         return email;

@@ -37,7 +37,7 @@ public class match extends AppCompatActivity {
             TextView num = findViewById(R.id.phone);
             name.setText(match.get(i).getName());
             bio.setText(match.get(i).getBio());
-            num.setText(Integer.toString(match.get(i).getNumber()));
+            num.setText(Long.toString(match.get(i).getNumber()));
         }
     }
 
@@ -67,7 +67,7 @@ public class match extends AppCompatActivity {
         TextView num = findViewById(R.id.phone);
         name.setText(match.get(i).getName());
         bio.setText(match.get(i).getBio());
-        num.setText(Integer.toString(match.get(i).getNumber()));
+        num.setText(Long.toString(match.get(i).getNumber()));
     }
 
 
