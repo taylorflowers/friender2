@@ -1,5 +1,7 @@
 package com.example.taylorflowers.friender;
 
+import android.graphics.Bitmap;
+
 import java.util.LinkedList;
 import java.util.List;
 import java.util.ArrayList;
@@ -13,6 +15,8 @@ public class People {
     private int age;
     private String bio;
     private long number;
+
+    private Bitmap bit = null;
 
     private List<People> liked = new ArrayList<>();
     private List<People> likedBy = new ArrayList<>();
@@ -101,5 +105,15 @@ public class People {
 
     public String toString() {
         return name + " " + age + "\n" + number + "\n" + bio;
+    }
+
+    public void setMap(Bitmap b) {
+        if (b != null) {
+            bit = b;
+        }
+    }
+
+    public Bitmap getMap() {
+        return bit;
     }
 }

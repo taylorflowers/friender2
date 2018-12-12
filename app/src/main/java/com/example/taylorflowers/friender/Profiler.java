@@ -15,8 +15,6 @@ public class Profiler extends AppCompatActivity {
 
     static final int REQUEST_IMAGE_CAPTURE = 1;
 
-    Bitmap permPic = null;
-
     People user = People.curr;
 
     Camera camera;
@@ -27,11 +25,11 @@ public class Profiler extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profiler);
 
-        BitMap bitty = new BitMap(null);
+        user.setMap(null);
 
-        if (bitty.getMap() != null) {
+        if (user.getMap() != null) {
             ImageView pic = findViewById(R.id.profilePic);
-            pic.setImageBitmap(bitty.getMap());
+            pic.setImageBitmap(user.getMap());
         }
 
         TextView n = findViewById(R.id.name);
@@ -52,7 +50,7 @@ public class Profiler extends AppCompatActivity {
         if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
             Bundle extras = data.getExtras();
             Bitmap imageBitmap = (Bitmap) extras.get("data");
-            BitMap bitty = new BitMap(imageBitmap);
+            user.setMap(imageBitmap);
             pic.setImageBitmap(imageBitmap);
         }
     }
